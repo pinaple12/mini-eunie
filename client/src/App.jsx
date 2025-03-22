@@ -6,7 +6,7 @@ export default function App() {
   const [showInputs, setShowInputs] = useState(false);
   const [products, setProducts] = useState([]);
 
-  const fullText = "Hi! I'm Mini Eunie, your personal helper for matcha updates.";
+  const fullText = "Hi! I'm Mini Eunie, your personal helper for matcha updates. Let me know how I can help!";
 
   useEffect(() => {
     let index = 0;
@@ -26,14 +26,14 @@ export default function App() {
 
   useEffect(() => {
     if (showInputs) {
-      fetch("http://localhost:3001/products")
+      fetch("https://mini-eunie.onrender.com/products")
         .then((res) => res.json())
         .then((data) => setProducts(data.products || []));
     }
   }, [showInputs]);
 
   const handleInputs = (value) => {
-    fetch("http://localhost:3001/data", {
+    fetch("https://mini-eunie.onrender.com/data", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ type: "product", value }),
