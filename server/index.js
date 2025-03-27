@@ -104,4 +104,4 @@ const checkInventory = () => {
 
 // Start inventory check
 checkInventory();
-setInterval(checkInventory, 5 * 60 * 1000);
+setInterval(checkInventory, 1 * 30 * 1000);
